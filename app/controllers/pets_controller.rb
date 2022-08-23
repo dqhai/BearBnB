@@ -18,7 +18,8 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    @pet.update(params[:pet])
+    @pet.update(pet_params)
+    redirect_to pet_path(@pet)
   end
 
   private
