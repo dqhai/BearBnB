@@ -1,5 +1,7 @@
 <h1>create new pet</h1>
 <%= simple_form_for @pet do |f| %>
   <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :details %>
   <%= f.submit %>
 <% end %>
