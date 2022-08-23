@@ -4,4 +4,7 @@ class User < ApplicationRecord
   has_many :pets
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :pets, dependent: :destroy
+  has_many :bookings
 end
