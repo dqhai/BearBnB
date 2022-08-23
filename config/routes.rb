@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'pets', to: 'pets#index'
+  resources :pets
   devise_for :users
 
   root to: "pages#home"
+  # get 'pets', to: 'pets#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
