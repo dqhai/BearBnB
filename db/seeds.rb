@@ -15,6 +15,8 @@ user1 = User.create(email: 'afolabi@afolabi.com', password: '1234567', password_
 user2 = User.create(email: 'axel@axel.com', password: '7654321', password_confirmation: '7654321')
 user3 = User.create(email: 'hai@hai.com', password: 'password', password_confirmation: 'password')
 
+p [user1, user2, user3]
+
 puts "Creating pets..."
 pet1 = Pet.new(name: 'brandy', address: 'house 1', details: 'its a dog mate')
 pet2 = Pet.new(name: 'rum', address: 'house 2', details: 'its a dog too mate')
@@ -29,7 +31,7 @@ pet2.user = user2
 pet3.user = user3
 koala.user = user1
 shibainu.user = user3
-donmewleone.user = user2
+donmeowleone.user = user2
 lugia.user = user3
 
 pet1.save
