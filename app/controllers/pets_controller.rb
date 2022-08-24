@@ -13,12 +13,18 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    @pet.save
+    @pet.user = current_user
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
-  def delete
+  def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
+    redirect_to pets_path, status: :see_other
   end
 
   def edit
@@ -34,6 +40,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :user_id, :address)
+    params.require(:pet).permit(:name, :address, :details, :photo)
   end
 end

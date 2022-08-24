@@ -1,6 +1,106 @@
-<h2>Here are some pets you can book</h2>
-<p><% @pets.each do |pet| %></p>
-<p><%= link_to pet.name, pet_path(pet)  %></p>
-<p><% end %></p>
+<html>
+  <h2>Top rated pets</h2>
+  <p><% @pets.each do |pet| %></p>
+  <p><%= link_to pet.name, pet_path(pet)  %></p>
+  <p><% end %></p>
+
+
 
 <%= link_to "+ Add a new pet", new_pet_path %>
+
+  <div class="cards">
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Chopper</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Vodka</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Lugia</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Vodka</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+  </div>
+
+   <div class="cards">
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Chopper</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Vodka</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Lugia</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+
+    <div class="card-pet">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Vodka</h2>
+          <p>Short description here!</p>
+        </div>
+        <h2 class="card-trip-pricing">Rating</h2>
+      </div>
+    </div>
+  </div>
+
+</html>
+

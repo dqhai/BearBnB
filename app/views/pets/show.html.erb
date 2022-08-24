@@ -5,6 +5,10 @@
 <p><%= %></p>
 <p>test</p>
 
+<%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
+
+<br>
+
 
 <%= link_to "Hangout with this pet (bookings work in progress)",
   new_pet_booking_path(@pet)
