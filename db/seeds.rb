@@ -74,5 +74,6 @@ koala.save
 shibainu.save
 donmeowleone.save
 lugia.save
+panda.save
 
 puts "Finished!"
