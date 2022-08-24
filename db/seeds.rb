@@ -25,6 +25,7 @@ koala = Pet.new(name: "Chopper", address: "Uluru Rock", details: "needs to eat 2
 shibainu = Pet.new(name: "Toby", address: "Cologne", details: "such doge, much wow")
 donmeowleone = Pet.new(name: "donmeowleone", address: "Brooklyn 99", details: "Enjoys  Whiskey on the mice and Cuban cigars")
 lugia = Pet.new(name: "Lugia", address: "Alabasta", details: "flies around")
+panda = Pet.new(name: "Panda", address: "Bambooville", details: "eat, sleep, repeat")
 
 pet1.user = user1
 pet2.user = user2
@@ -32,7 +33,8 @@ pet3.user = user3
 koala.user = user1
 shibainu.user = user3
 donmeowleone.user = user2
-lugia.user = user3
+lugia.user = user1
+panda.user = user3
 
 pet1.save
 pet2.save
@@ -41,6 +43,5 @@ koala.save
 shibainu.save
 donmeowleone.save
 lugia.save
-
 
 puts "Finished!"
