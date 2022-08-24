@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :pets
+  resources :pets do
+    resources :bookings, only: %i[new create]
+  end
 
 
   devise_for :users
 
-  root to: "pages#home"
+  root to: "pets#index"
   # get 'pets', to: 'pets#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
