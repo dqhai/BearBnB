@@ -2,7 +2,7 @@
 <p><%= @pet.address %></p>
 <p><%= @pet.details %></p>
 <p><%=  %></p>
-<p><%=  %></p>
+<p><%= %></p>
 <p>test</p>
 
 <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
@@ -10,15 +10,13 @@
 <br>
 
 
-<%= link_to "Hangout with this pet (bookings work in progress)"
-  pet_path(@pet)
+<%= link_to "Hangout with this pet (bookings work in progress)",
+  new_pet_booking_path(@pet)
  %>
-
 
 <%= link_to "Edit this pet",
   edit_pet_path(@pet)
 %>
-
 
 <%= link_to "Delete",
   pet_path(@pet),
