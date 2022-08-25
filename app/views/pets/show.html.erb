@@ -2,11 +2,13 @@
 <p><%= @pet.address %></p>
 <p><%= @pet.details %></p>
 <p><%=  %></p>
-<p><%=  %></p>
+<p><%= @pet.bookings.each |b| do%></p>
+<p><%=  b.user.email %></p>
+<p><%= @pet.bookings.each %></p>
 <p>test</p>
 
 
-<%= link_to "Hangout with this pet (bookings work in progress)"
+<%= link_to "Hangout with this pet (bookings work in progress)",
   pet_path(@pet)
  %>
 
