@@ -1,6 +1,32 @@
-<h2>Here are some pets you can book</h2>
-<p><% @pets.each do |pet| %></p>
-<p><%= link_to pet.name, pet_path(pet)  %></p>
-<p><% end %></p>
+<html>
+  <h2>Top rated pets</h2>
+  <p><% @pets.each do |pet| %></p>
+  <p><%= link_to pet.name, pet_path(pet)  %></p>
+  <p><% end %></p>
+
+
 
 <%= link_to "+ Add a new pet", new_pet_path %>
+
+  <div class="cards">
+
+    <% @pets.each do |pet|  %>
+      <div class="card-pet">
+        <%= cl_image_tag pet.photo.key %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= pet.name %></h2>
+
+            <p><%= pet.details %></p>
+
+          </div>
+          <h2 class="card-trip-pricing">Rating</h2>
+        </div>
+      </div>
+    <% end %>
+
+
+
+  </div>
+
+</html>
