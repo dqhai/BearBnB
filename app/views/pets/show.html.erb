@@ -1,39 +1,49 @@
-<div>
+<div class="show-all">
+  <div class="booking-confirmation">
+  <% if @pet.bookings.any? { |booking| booking.user.id = current_user.id } %>
+    <%= "You requested a booking for #{@pet.name} from #{@booking.start} untill #{@booking.end}. As soon as the owner confirms you will receive a confirmation."%>
+  <% end %>
+  </div>
   <div class="pet-details">
     <h2><%= @pet.name %></h2>
     <p><%= @pet.address %></p>
     <p><%= @pet.details %></p>
   </div>
 
-  <p><%= %></p>
-
-  <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
-
-<% if @pet.bookings.any? { |booking| booking.user.id = current_user.id } %>
-  <%= " youre Booking is pending " %>
-<% end %>
-
-<%# <%= link_to "Hangout with this pet (bookings work in progress)",
-  new_pet_booking_path(@pet)
- %> %>
-
-  <%= link_to "Edit this pet",
-    edit_pet_path(@pet)
-  %>
-
-<%= link_to "Delete",
-  pet_path(@pet),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-
-<h1>Create your booking</h1>
-<%= simple_form_for [@pet, @booking] do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
-  <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
+  <div class="img">
+    <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Create" %>
+
+
+  <div class="show-links">
+    <div class="btn">
+    <%= link_to "Hangout with this pet (bookings work in progress)",
+      new_pet_booking_path(@pet), {:style=>'color:black; text-decoration:none;'} %>
+    </div>
+
+    <div class="btn">
+      <%= link_to "Edit this pet",
+          edit_pet_path(@pet), {:style=>'color:black; text-decoration:none;'}
+      %>
+    </div>
+
+    <div class="btn">
+      <%= link_to "Delete",
+        pet_path(@pet),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+      </div>
   </div>
-<% end %>
+
+  <h1>Create your booking</h1>
+  <%= simple_form_for [@pet, @booking] do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
+    <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Create" %>
+    </div>
+  <% end %>
+</div>

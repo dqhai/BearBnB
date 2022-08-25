@@ -1,18 +1,13 @@
-<%# <%= simple_form_for [current_pet, @booking] do |f| %> %>
-  <%# <%= raise %>
-  <%# <%= f.text_field :name,         placeholder: "Name" %>
-  <%# <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
-  <%# <%= f.text_field :end,    placeholder: "Check-out" %> %>
-  <%# <%= f.button :submit, "BOOK" %>
-<%# <% end %> %>
-<h1>Create your booking</h1>
-<%= simple_form_for [@pet, @booking] do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
-  <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Create" %>
-  </div>
-<% end %>
+<div class="body">
+  <h1>Create your booking</h1>
+  <%= simple_form_for [@pet, @booking] do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
+    <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
+    </div>
+    <div class="btn">
+      <%= f.button :submit, "Create" %>
+    </div>
+  <% end %>
+</div>

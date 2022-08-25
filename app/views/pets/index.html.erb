@@ -1,11 +1,6 @@
 <html>
 <div class="body">
-  <div class="header2">
-    <h2>Top rated pets</h2>
-  </div>
- 
-  <h2>Top rated pets</h2>
-  
+
   <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -14,14 +9,10 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  
-  <p><% @pets.each do |pet| %></p>
-  <p><%= link_to pet.name, pet_path(pet)  %></p>
-  <p><% end %></p>
 
-
-
-<%= link_to "+ Add a new pet", new_pet_path %>
+  <div class="header2">
+    <h2>Top rated pets</h2>
+  </div>
 
   <div class="cards" >
       <% @pets.each do |pet|  %>
@@ -31,7 +22,7 @@
             <div>
               <h2><%= link_to pet.name, pet_path(pet) %></h2>
 
-              <p><%= pet.details %></p>
+              <p><%= pet.details%></p>
 
             </div>
             <h2 class="card-pet-pricing">Score <br>87/100</h2>
@@ -41,10 +32,6 @@
   </div>
 
   <h2>Pets near you</h2>
-
-  <p><% @pets.each do |pet| %></p>
-  <p><%= link_to pet.name, pet_path(pet)  %></p>
-  <p><% end %></p>
 
   <%= link_to "+ Add a new pet", new_pet_path %>
 </div>
