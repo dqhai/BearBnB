@@ -1,9 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: green;
   height: 50px;
   background-color: transparent;
   transition: 0.5s background-color ease;
+  margin-bottom: 15px;
+  margin-left: 15px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,4 +22,18 @@
 
 .navbar-name {
   font-size: 40px;
+}
+
+.nav-item active {
+  padding: 10px;
+}
+
+.nav-item {
+  padding: 10px;
+}
+
+.navbar-center {
+  text-decoration: none !important;
+  font-size: 45px;
+  color: black;
 }
