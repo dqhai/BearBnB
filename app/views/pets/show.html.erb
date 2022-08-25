@@ -7,29 +7,33 @@
 
   <p><%= %></p>
 
-  <p>test</p>
-
   <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
 
+<% if @pet.bookings.any? { |booking| booking.user.id = current_user.id } %>
+  <%= " youre Booking is pending " %>
+<% end %>
 
-  <%= link_to "Hangout with this pet (bookings work in progress)",
-    pet_path(@pet)
-  %>
-
-
-
-  <%= link_to "Hangout with this pet (bookings work in progress)",
-    new_pet_booking_path(@pet)
-  %>
+<%# <%= link_to "Hangout with this pet (bookings work in progress)",
+  new_pet_booking_path(@pet)
+ %> %>
 
   <%= link_to "Edit this pet",
     edit_pet_path(@pet)
   %>
 
-  <%= link_to "Delete",
-    pet_path(@pet),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+<%= link_to "Delete",
+  pet_path(@pet),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
 
-  <%= link_to "Back to home", pets_path(@pet)%>
-</div>
+<h1>Create your booking</h1>
+<%= simple_form_for [@pet, @booking] do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
+  <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Create" %>
+  </div>
+<% end %>

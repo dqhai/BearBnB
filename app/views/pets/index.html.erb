@@ -3,6 +3,25 @@
   <div class="header2">
     <h2>Top rated pets</h2>
   </div>
+ 
+  <h2>Top rated pets</h2>
+  
+  <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a pet"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  
+  <p><% @pets.each do |pet| %></p>
+  <p><%= link_to pet.name, pet_path(pet)  %></p>
+  <p><% end %></p>
+
+
+
+<%= link_to "+ Add a new pet", new_pet_path %>
 
   <div class="cards" >
       <% @pets.each do |pet|  %>

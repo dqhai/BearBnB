@@ -1,6 +1,10 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
+    if params[:query].present?
+      @pets = Pet.search_by_name_and_species(params[:query])
+    else
+      @pets = Pet.all
+    end
   end
 
   def new
@@ -9,6 +13,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
@@ -40,6 +45,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :address, :details, :photo)
+    params.require(:pet).permit(:name, :address, :details, :species, :diet, :lifestyle, :photo)
   end
 end
