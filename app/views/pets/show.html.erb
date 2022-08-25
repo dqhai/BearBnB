@@ -1,24 +1,24 @@
 <h2><%= @pet.name %></h2>
 <p><%= @pet.address %></p>
 <p><%= @pet.details %></p>
-<p><%=  %></p>
-
-<p><%= %></p>
+<% if @pet.bookings.any? { |booking| booking.user.id = current_user.id } %>
+  <%= " youre Booking is pending " %>
+<% end %>
 
 <p>test</p>
 
 <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
 
-
+<%#
 <%= link_to "Hangout with this pet (bookings work in progress)",
   pet_path(@pet)
- %>
+ %> %>
 
 
 
-<%= link_to "Hangout with this pet (bookings work in progress)",
+<%# <%= link_to "Hangout with this pet (bookings work in progress)",
   new_pet_booking_path(@pet)
- %>
+ %> %>
 
 <%= link_to "Edit this pet",
   edit_pet_path(@pet)
@@ -28,3 +28,15 @@
   pet_path(@pet),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+
+<h1>Create your booking</h1>
+<%= simple_form_for [@pet, @booking] do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
+  <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Create" %>
+  </div>
+<% end %>
