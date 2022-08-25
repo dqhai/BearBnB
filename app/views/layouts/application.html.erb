@@ -16,15 +16,44 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
-        <a class="navbar-brand" href="#">
-          <%= image_tag"bear-logo.png" %>
-        </a>
-        <div class="navbar-center" style="text-decoration">
-        <%= link_to "BearBnB", pets_path %>
+      <div class="wrapper">
+        <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+            <a class="navbar-brand" href="#">
+              <%= image_tag"bear-logo.png" %>
+            </a>
+            <div class="navbar-center">
+              <%= link_to "BearBnB", pets_path, {:style=>'color:black; text-decoration:none;'} %>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item active">
+                    <%= link_to "+ Add your pet", new_pet_path, {:style=>'color:black; text-decoration:none;'} %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "Logout", new_pet_path, {:style=>'color:black; text-decoration:none;'} %>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <%= image_tag "avatar.webp", class:"avatar dropdown-toggle", id:"navbarDropdown", data: {"data-bs-toggle": :dropdown, "aria-haspopup": :true, "aria-expanded": :false}, href:"BearBnB"%>
+                  </li>
+                  <!--li class="nav-item"-->
+                  <!--/li-->
+              </ul>
+          </div>
         </div>
+          <%= yield %>
 
+     <div class="footer">
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            Any questions left?
+        </div>
+     </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
               <li class="nav-item active">

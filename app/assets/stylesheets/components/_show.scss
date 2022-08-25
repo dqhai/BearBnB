@@ -1,4 +1,25 @@
-.pet-details {
-  color: green;
-  margin-left: 20px;
+.show-all {
+  padding: 10px;
+
+  .btn {
+    border: 1px solid #4A4A4A;
+    padding: 8px 24px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    margin-bottom: 15px;
+  }
+
+  .img {
+    margin-bottom: 10px;
+  }
+
+  .pet-deatils {
+    border-width: 5px;
+  }
+
+  .booking-confirmation {
+    background-color: green;
+    text-align: center;
+  }
 }
