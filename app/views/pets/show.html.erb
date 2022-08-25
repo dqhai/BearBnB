@@ -1,11 +1,12 @@
 <h2><%= @pet.name %></h2>
 <p><%= @pet.address %></p>
 <p><%= @pet.details %></p>
+
 <% if @pet.bookings.any? { |booking| booking.user.id = current_user.id } %>
   <%= " youre Booking is pending " %>
 <% end %>
 
-<p>test</p>
+
 
 <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %>
 
@@ -13,6 +14,7 @@
 <%= link_to "Hangout with this pet (bookings work in progress)",
   pet_path(@pet)
  %> %>
+
 
 
 
