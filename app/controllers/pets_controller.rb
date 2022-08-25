@@ -1,6 +1,11 @@
 class PetsController < ApplicationController
   def index
-    @pets = Pet.all
+    if params[:query].present?
+      @pets = Pet.search_by_name_and_species(params[:query])
+    else
+      @pets = Pet.all
+    end
+    
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,
@@ -8,7 +13,6 @@ class PetsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {pet: pet}),
         image_url: helpers.asset_url("logo.png")
       }
-    end
   end
 
   def new
@@ -17,6 +21,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
