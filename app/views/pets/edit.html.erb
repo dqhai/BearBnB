@@ -1,12 +1,12 @@
-<h2>Updating a pet</h2>
+<h2>Updating <%= @pet.name %></h2>
 
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :details %>
+  <%= f.input :species %>
   <%= f.submit %>
 <% end %>
 
 
 <%= link_to "Back to list", pets_path(@pet)%>
-
