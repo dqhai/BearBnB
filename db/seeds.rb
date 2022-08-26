@@ -38,7 +38,7 @@ salamander = Pet.new(name: "Sal", address: "Riverside 89", details: "eat, sleep,
 trex = Pet.new(name: "Rex", address: "Stonehenge", details: "eat, sleep, repeat", species: 'dinosaur', diet: 'carnivorous', lifestyle: 'independent')
 bunny = Pet.new(name: "BunnyMcBun", address: "Farm in Schwäbisch Alb", details: "eat, sleep, repeat", species: 'bunny', diet: 'herbivorous', lifestyle: 'social')
 tiger = Pet.new(name: "Tigger", address: "Siberia", details: "eat, sleep, repeat", species: 'tiger', diet: 'carnivorous', lifestyle: 'independent')
-
+bear = Pet.new(name: "BB", address: "Swiss Alps", details: "eat, sleep, repeat", species: 'bear', diet: 'omnivorous', lifestyle: 'independent')
 
 
 puts "Assign pets to users..."
@@ -61,6 +61,7 @@ salamander.user = user2
 trex.user = user3
 bunny.user = user3
 tiger.user = user3
+bear.user = user3
 
 puts "adding photos..."
 
@@ -82,26 +83,31 @@ file15 = URI.open("https://www.regenwald.org/uploads/photos/article/wide/xl/sala
 file16 = URI.open("https://static01.nyt.com/images/2021/12/07/lens/07xp-jumper01/07xp-jumper01-mediumSquareAt3X.jpg")
 file17 = URI.open("https://images.pexels.com/photos/2061754/pexels-photo-2061754.jpeg?cs=srgb&dl=pexels-riika-j-2061754.jpg&fm=jpg")
 file18 = URI.open("https://cdnuploads.aa.com.tr/uploads/Contents/2021/07/28/thumbs_b_c_7fb6d5e33b48f26614aec167772cf172.jpg?v=095708")
+file19 = URI.open("https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F220613153916-growling-bear-stock.jpg")
+file20 = URI.open("https://ksr-ugc.imgix.net/assets/036/689/361/e324a3a11a0c73123c696d00fafe8e15_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1647519459&auto=format&frame=1&q=92&s=b92d1c09c974d7299fb22696a701270d")
+file21 = URI.open("https://www.euronatur.org/fileadmin/_processed_/a/4/csm_Braunbaer__c__Heinz_Lehmann_82aaddcf8a.jpg")
 
-
-pet1.photo.attach(io: file1, filename: "brandy.jpg", content_type: "image/jpg")
-pet2.photo.attach(io: file2, filename: "rum.jpg", content_type: "image/jpg")
-pet3.photo.attach(io: file3, filename: "vodka.jpg", content_type: "image/jpg")
-koala.photo.attach(io: file4, filename: "Chopper.jpg", content_type: "image/jpg")
-shibainu.photo.attach(io: file5, filename: "Toby.jpg", content_type: "image/jpg")
-donmeowleone.photo.attach(io: file6, filename: "donmeowleone.jpg", content_type: "image/jpg")
-lugia.photo.attach(io: file7, filename: "Lugia.jpg", content_type: "image/jpg")
-panda.photo.attach(io: file8, filename: "Panda.jpg", content_type: "image/jpg")
-snek.photo.attach(io: file9, filename: 'snek.jpg', content_type: 'image/jpg')
-eagle.photo.attach(io: file10, filename: 'eagle', content_type: 'image/jpg')
-goldfish.photo.attach(io: file11, filename: 'goldfish', content_type: 'image/jpg')
-sloth.photo.attach(io: file12, filename: 'sloth', content_type: 'image/jpg')
-turtle.photo.attach(io: file13, filename: 'turtle', content_type: 'image/jpg')
-lizard.photo.attach(io: file14, filename: 'lizard', content_type: 'image/jpg')
-salamander.photo.attach(io: file15, filename: 'salamander', content_type: 'image/jpg')
-trex.photo.attach(io: file16, filename: 'trex', content_type: 'image/jpg')
-bunny.photo.attach(io: file17, filename: 'bunny', content_type: 'image/jpg')
-tiger.photo.attach(io: file18, filename: 'tiger', content_type: 'image/jpg')
+pet1.photos.attach(io: file1, filename: "brandy.jpg", content_type: "image/jpg")
+pet2.photos.attach(io: file2, filename: "rum.jpg", content_type: "image/jpg")
+pet3.photos.attach(io: file3, filename: "vodka.jpg", content_type: "image/jpg")
+koala.photos.attach(io: file4, filename: "Chopper.jpg", content_type: "image/jpg")
+shibainu.photos.attach(io: file5, filename: "Toby.jpg", content_type: "image/jpg")
+donmeowleone.photos.attach(io: file6, filename: "donmeowleone.jpg", content_type: "image/jpg")
+lugia.photos.attach(io: file7, filename: "Lugia.jpg", content_type: "image/jpg")
+panda.photos.attach(io: file8, filename: "Panda.jpg", content_type: "image/jpg")
+snek.photos.attach(io: file9, filename: 'snek.jpg', content_type: 'image/jpg')
+eagle.photos.attach(io: file10, filename: 'eagle', content_type: 'image/jpg')
+goldfish.photos.attach(io: file11, filename: 'goldfish', content_type: 'image/jpg')
+sloth.photos.attach(io: file12, filename: 'sloth', content_type: 'image/jpg')
+turtle.photos.attach(io: file13, filename: 'turtle', content_type: 'image/jpg')
+lizard.photos.attach(io: file14, filename: 'lizard', content_type: 'image/jpg')
+salamander.photos.attach(io: file15, filename: 'salamander', content_type: 'image/jpg')
+trex.photos.attach(io: file16, filename: 'trex', content_type: 'image/jpg')
+bunny.photos.attach(io: file17, filename: 'bunny', content_type: 'image/jpg')
+tiger.photos.attach(io: file18, filename: 'tiger', content_type: 'image/jpg')
+bear.photos.attach(io: file19, filename: 'tiger', content_type: 'image/jpg')
+# bear.photos.attach(io: file20, filename: 'tiger', content_type: 'image/jpg')
+# bear.photos.attach(io: file21, filename: 'tiger', content_type: 'image/jpg')
 
 puts "saving..."
 
@@ -123,5 +129,6 @@ salamander.save
 trex.save
 bunny.save
 tiger.save
+bear.save
 
 puts "Finished!"

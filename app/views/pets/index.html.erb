@@ -16,27 +16,32 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
      <% end %>
   </div>
-
+    <div>
+      <h2>Top Rated Pets</h2>
+    </div>
   <div class="cards" >
+
 
      <% @pets.each do |pet|  %>
      <div class="cardbody">
         <div class="card-pet" >
 
           <%= cl_image_tag pet.photo.key %>
+
           <div class="card-pet-infos">
-           <div>
+            <div>
             <h2><%= link_to pet.name, pet_path(pet) %></h2>
 
              <p><%= pet.details%></p>
 
             </div>
             <h2 class="card-pet-pricing">Score <br>87/100</h2>
-           </div>
           </div>
+
      </div>
 
         <% end %>
     </div>
+
   </div>
 </div>
