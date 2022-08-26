@@ -1,3 +1,4 @@
+
 <h1>create new pet</h1>
 <%= simple_form_for @pet do |f| %>
   <%= f.input :name %>
@@ -10,4 +11,5 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to "Back to list", pets_path(@pet)%>
+  <%= link_to "Back to list", pets_path(@pet)%>
+</div>
