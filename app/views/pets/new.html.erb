@@ -1,15 +1,16 @@
-
-<h1>create new pet</h1>
-<%= simple_form_for @pet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :details %>
-  <%= f.input :species %>
-  <%= f.input :diet %>
-  <%= f.input :lifestyle %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
-
-  <%= link_to "Back to list", pets_path(@pet)%>
+<div class="body">
+  <h1>create new pet</h1>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :details %>
+    <%= f.input :species %>
+    <%= f.input :diet %>
+    <%= f.input :lifestyle %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, class:"btn" %>
+  <% end %>
+  <div class="btn">
+    <%= link_to "Back to list", pets_path(@pet),{:style=>'color:black; text-decoration:none;'}%>
+  </div>
 </div>
