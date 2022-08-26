@@ -6,15 +6,16 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
     </div>
-
-    <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a pet"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-     <% end %>
+    <div class="search-bar">
+      <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a pet"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    <div>
   </div>
     <div>
       <h2>Top Rated Pets</h2>
@@ -26,12 +27,12 @@
 
           <div class="card-pet-infos">
             <div>
-            <h2><%= link_to pet.name, pet_path(pet) %></h2>
+            <h2><%= link_to pet.name, pet_path(pet) {:style=>'color:black; text-decoration:none;'}%></h2>
 
              <p><%= pet.details%></p>
 
             </div>
-            <h2 class="card-pet-pricing">Score <br>87/100</h2>
+            <h2 class="card-pet-pricing">Species: <br><%= pet.species %></h2>
           </div>
       </div>
     <% end %>
