@@ -6,8 +6,6 @@
       <%= f.input :start, :order => [:month, :day], input_html: { autocomplete: "Starting Date" } %>
     <%= f.input :end, :order => [:month, :day], input_html: { autocomplete: "Ending Date" } %>
     </div>
-    <div class="btn">
-      <%= f.button :submit, "Create" %>
-    </div>
+    <%= f.button :submit, "Create" %>
   <% end %>
 </div>

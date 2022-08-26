@@ -1,7 +1,7 @@
 <div class="show-all">
   <div class="booking-confirmation">
   <% if @pet.bookings.any? { |booking| booking.user.id = current_user.id } %>
-    <%= "You requested a booking for #{@pet.name} from #{@booking.start} untill #{@booking.end}. As soon as the owner confirms you will receive a confirmation."%>
+    <%= "You requested a booking for #{@pet.name} from #{@pet.bookings.last.start} untill #{@pet.bookings.last.end}. As soon as the owner confirms you will receive a confirmation."%>
   <% end %>
   </div>
   <div class="pet-details">
@@ -19,21 +19,15 @@
 
   <div class="show-links">
     <div class="btn">
-    <%= link_to "Hangout with this pet (bookings work in progress)",
-      new_pet_booking_path(@pet), {:style=>'color:black; text-decoration:none;'} %>
-    </div>
-
-    <div class="btn">
       <%= link_to "Edit this pet",
-          edit_pet_path(@pet), {:style=>'color:black; text-decoration:none;'}
-      %>
+          edit_pet_path(@pet), {:style=>'color:black; text-decoration:none;'}%>
     </div>
 
     <div class="btn">
       <%= link_to "Delete",
         pet_path(@pet),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
+        %>
       </div>
   </div>
 

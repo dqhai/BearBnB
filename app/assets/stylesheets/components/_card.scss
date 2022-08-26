@@ -8,26 +8,25 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+
 }
 
 .card-pet h2 {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
-  margin: 0;
+  margin: 2;
 }
 
 .card-pet p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
 }
 
 
 .card-pet .card-pet-infos {
-  padding: 16px;
-  display: flex;
+  padding: 10px;
   justify-content: space-between;
-  align-items: flex-end;
   position: relative;
 }
 
@@ -36,4 +35,12 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-pet-species {
+  font-weight: lighter;
+}
+
+.card-pet-name {
+  font-size: 14px;
 }

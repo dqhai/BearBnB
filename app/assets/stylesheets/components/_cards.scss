@@ -1,6 +1,22 @@
+// .cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   padding: 20px;
+// }
+
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+   .cardbody{
+    display: inline-block;
+   }
 }
+// img {
+//   flex: 0 0 auto;
+//   width: auto;
+//   height: 100px;
+//   max-width: 100%;
+//   margin-right: 10px;
+// }
