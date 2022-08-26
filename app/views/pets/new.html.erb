@@ -1,13 +1,15 @@
-<h1>create new pet</h1>
-<%= simple_form_for @pet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :details %>
-  <%= f.input :species %>
-  <%= f.input :diet %>
-  <%= f.input :lifestyle %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="body">
+  <h1>create new pet</h1>
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :details %>
+    <%= f.input :species %>
+    <%= f.input :diet %>
+    <%= f.input :lifestyle %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
 
-<%= link_to "Back to list", pets_path(@pet)%>
+  <%= link_to "Back to list", pets_path(@pet)%>
+</div>
