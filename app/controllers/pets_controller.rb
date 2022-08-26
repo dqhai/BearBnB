@@ -6,6 +6,14 @@ class PetsController < ApplicationController
       @pets = Pet.all
     end
 
+    @carnivores = Pet.where(diet: "carnivorous")
+    @herbivores = Pet.where(diet: "herbivorous")
+    @socialites = Pet.where(lifestyle: "social")
+    @infps = Pet.where(lifestyle: "independent")
+    @dogs = Pet.where(species: "dog")
+    @reptile = Pet.where(species: "reptile")
+
+
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,

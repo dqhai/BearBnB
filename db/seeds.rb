@@ -39,7 +39,14 @@ trex = Pet.new(name: "Rex", address: "Stonehenge", details: "eat, sleep, repeat"
 bunny = Pet.new(name: "BunnyMcBun", address: "Farm in Schwäbisch Alb", details: "eat, sleep, repeat", species: 'bunny', diet: 'herbivorous', lifestyle: 'social')
 tiger = Pet.new(name: "Tigger", address: "Siberia", details: "eat, sleep, repeat", species: 'tiger', diet: 'carnivorous', lifestyle: 'independent')
 bear = Pet.new(name: "BB", address: "Swiss Alps", details: "eat, sleep, repeat", species: 'bear', diet: 'omnivorous', lifestyle: 'independent')
+icebear = Pet.new(name: "Frosty", address: "North Pole", details: "eat, sleep, repeat", species: 'bear', diet: 'carnivorous', lifestyle: 'independent')
+papagei = Pet.new(name: "Papageno", address: "Mexico", details: "eat, sleep, repeat", species: 'bird', diet: 'omnivorous', lifestyle: 'social')
 
+dude = Pet.new(name: "karl", address: "cologne", details: "smoke weed everyday", species: 'superman', diet: 'carnivorous', lifestyle: 'smoke weed everyday')
+cat2 = Pet.new(name: "simba", address: "kenya", details: "eat, sleep, repeat", species: 'cat', diet: 'carnivorous', lifestyle: 'cant wait to be king')
+cat3 = Pet.new(name: "Mufasa", address: "kenya", details: "king", species: 'cat', diet: 'carnivorous', lifestyle: 'active')
+cat4 = Pet.new(name: "Scar", address: "kenya", details: "backstabbing", species: 'cat', diet: 'carnivorous', lifestyle: 'independent')
+mouse = Pet.new(name: "Jerry", address: "America", details: "disturb tom", species: 'mouse', diet: 'carnivorous', lifestyle: 'independent')
 
 puts "Assign pets to users..."
 
@@ -62,6 +69,14 @@ trex.user = user3
 bunny.user = user3
 tiger.user = user3
 bear.user = user3
+icebear.user = user1
+papagei.user = user2
+
+dude.user = user1
+cat2.user = user1
+cat3.user = user1
+cat4.user = user1
+mouse.user = user1
 
 puts "adding photos..."
 
@@ -87,6 +102,19 @@ file19 = URI.open("https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,
 file20 = URI.open("https://ksr-ugc.imgix.net/assets/036/689/361/e324a3a11a0c73123c696d00fafe8e15_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1647519459&auto=format&frame=1&q=92&s=b92d1c09c974d7299fb22696a701270d")
 file21 = URI.open("https://www.euronatur.org/fileadmin/_processed_/a/4/csm_Braunbaer__c__Heinz_Lehmann_82aaddcf8a.jpg")
 
+file24 = URI.open("https://media-exp1.licdn.com/dms/image/C4E03AQGiQcbOwCEKLQ/profile-displayphoto-shrink_800_800/0/1638977476479?e=2147483647&v=beta&t=XG0GGD_j8lM3IzZtSgAgIluN85lNDm7eKWBFAEt1sMs")
+file25 = URI.open("https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg")
+file26 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/330px-Cat_November_2010-1a.jpg")
+file22 = URI.open("https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg?resize=2048,1339")
+file23 = URI.open("https://i.guim.co.uk/img/media/2807e62f6651f16d36e38fa2697930c7b752bfa6/0_138_2144_1286/master/2144.jpg?width=620&quality=45&fit=max&dpr=2&s=08b231202e5770651167e4f2de573779")
+
+file30 = URI.open("https://pbs.twimg.com/profile_images/907877641600081920/Q-T24ni-_400x400.jpg")
+file31 = URI.open("https://static01.nyt.com/images/2022/04/22/arts/polar1/merlin_205535493_b0ddb701-76e0-4db4-8ef1-d30a9536ed14-mobileMasterAt3x.jpg")
+
+file33 = URI.open("https://www.zooroyal.de/magazin/wp-content/uploads/2017/04/papagei-als-haustier-2-760x560.jpg")
+file32 = URI.open("https://www.zooroyal.at/magazin/wp-content/uploads/2017/12/papagei-als-haustier-760x560.jpg")
+
+
 pet1.photos.attach(io: file1, filename: "brandy.jpg", content_type: "image/jpg")
 pet2.photos.attach(io: file2, filename: "rum.jpg", content_type: "image/jpg")
 pet3.photos.attach(io: file3, filename: "vodka.jpg", content_type: "image/jpg")
@@ -105,9 +133,18 @@ salamander.photos.attach(io: file15, filename: 'salamander', content_type: 'imag
 trex.photos.attach(io: file16, filename: 'trex', content_type: 'image/jpg')
 bunny.photos.attach(io: file17, filename: 'bunny', content_type: 'image/jpg')
 tiger.photos.attach(io: file18, filename: 'tiger', content_type: 'image/jpg')
-bear.photos.attach(io: file19, filename: 'tiger', content_type: 'image/jpg')
-# bear.photos.attach(io: file20, filename: 'tiger', content_type: 'image/jpg')
-# bear.photos.attach(io: file21, filename: 'tiger', content_type: 'image/jpg')
+# io = [file19, file20, file21]
+bear.photos.attach([{io: file19, filename: 'tiger', content_type: 'image/jpg'}, {io: file20, filename: 'tiger', content_type: 'image/jpg'}, {io: file21, filename: 'tiger', content_type: 'image/jpg'}])
+# bear.photo.attach(io: file20, filename: 'tiger', content_type: 'image/jpg')
+# bear.photo.attach(io: file21, filename: 'tiger', content_type: 'image/jpg')
+icebear.photos.attach([{io: file30, filename: 'icebabe', content_type: 'image/jpg'}, {io: file31, filename: 'icebabe2', content_type: 'image/jpg'}])
+papagei.photos.attach([{io: file32, filename: 'icebabe', content_type: 'image/jpg'}, {io: file33, filename: 'icebabe2', content_type: 'image/jpg'}])
+
+dude.photos.attach(io: file24, filename: 'dude', content_type: 'image/jpg')
+cat2.photos.attach(io: file25, filename: 'cat2', content_type: 'image/jpg')
+cat3.photos.attach(io: file26, filename: 'cat3', content_type: 'image/jpg')
+cat4.photos.attach(io: file22, filename: 'cat4', content_type: 'image/jpg')
+mouse.photos.attach(io: file23, filename: 'mouse', content_type: 'image/jpg')
 
 puts "saving..."
 
@@ -130,5 +167,12 @@ trex.save
 bunny.save
 tiger.save
 bear.save
+icebear.save
+papagei.save
+dude.save
+cat2.save
+cat3.save
+cat4.save
+mouse.save
 
 puts "Finished!"
