@@ -14,25 +14,22 @@
         placeholder: "Find a pet"
       %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+     <% end %>
+  </div>
 
-    <div class="header2">
-      <h2>Top rated pets</h2>
-    </div>
+  <div class="cards" >
+     <% @pets.each do |pet|  %>
+        <div class="card-pet" >
+          <%= cl_image_tag pet.photo.key %>
+          <div class="card-pet-infos">
+           <div>
+            <h2><%= link_to pet.name, pet_path(pet) %></h2>
 
-    <div class="cards" >
-        <% @pets.each do |pet|  %>
-          <div class="card-pet" >
-            <%= cl_image_tag pet.photo.key %>
-            <div class="card-pet-infos">
-              <div>
-                <h2><%= link_to pet.name, pet_path(pet) %></h2>
+             <p><%= pet.details%></p>
 
-                <p><%= pet.details%></p>
-
-              </div>
-              <h2 class="card-pet-pricing">Score <br>87/100</h2>
             </div>
+            <h2 class="card-pet-pricing">Score <br>87/100</h2>
+           </div>
           </div>
         <% end %>
     </div>
