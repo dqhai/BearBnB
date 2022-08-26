@@ -6,7 +6,7 @@
   <%= f.input :species %>
   <%= f.input :diet %>
   <%= f.input :lifestyle %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
 
