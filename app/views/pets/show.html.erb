@@ -51,7 +51,7 @@
       <div class="cards" >
         <% @selection = Pet.where(species: "#{@pet.species}")%>
           <% @selection.each do |pet|  %>
-            <div class="card-pet" >
+          <div class="cardbody"> <div class="card-pet" >
               <%= cl_image_tag pet.photos.first.key %>
               <div class="card-pet-infos">
                 <div>
@@ -62,7 +62,8 @@
                 </div>
                 <h2 class="card-pet-pricing">Score <br>87/100</h2>
               </div>
-            </div>
+            </div></div>
+
           <% end %>
       </div>
   <% when 1 %>
@@ -70,7 +71,7 @@
     <div class="cards" >
       <% @selection = Pet.where(diet: "#{@pet.diet}")%>
         <% @selection.each do |pet|  %>
-          <div class="card-pet" >
+        <div class="cardbody"> <div class="card-pet" >
             <%= cl_image_tag pet.photos.first.key %>
             <div class="card-pet-infos">
               <div>
@@ -81,7 +82,9 @@
               </div>
               <h2 class="card-pet-pricing">Score <br>87/100</h2>
             </div>
-          </div>
+          </div></div>
+
+
         <% end %>
     </div>
   <% when 2 %>
@@ -89,7 +92,7 @@
     <div class="cards" >
       <% @selection = Pet.where(lifestyle: "#{@pet.lifestyle}")%>
         <% @selection.each do |pet|  %>
-          <div class="card-pet" >
+        <div class="cardbody">  <div class="card-pet" >
             <%= cl_image_tag pet.photos.first.key %>
             <div class="card-pet-infos">
               <div>
@@ -100,7 +103,9 @@
               </div>
               <h2 class="card-pet-pricing">Score <br>87/100</h2>
             </div>
-          </div>
+          </div></div>
+
+
         <% end %>
     </div>
   <% end %>
