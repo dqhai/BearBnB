@@ -18,8 +18,11 @@
   </div>
 
   <div class="cards" >
+
      <% @pets.each do |pet|  %>
+     <div class="cardbody">
         <div class="card-pet" >
+
           <%= cl_image_tag pet.photo.key %>
           <div class="card-pet-infos">
            <div>
@@ -31,6 +34,8 @@
             <h2 class="card-pet-pricing">Score <br>87/100</h2>
            </div>
           </div>
+     </div>
+
         <% end %>
     </div>
   </div>
