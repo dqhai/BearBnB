@@ -1,6 +1,6 @@
 .show-all {
   padding: 10px;
-
+}
   .btn {
     border: 1px solid #4A4A4A;
     padding: 8px 24px;
@@ -20,7 +20,8 @@
   }
 
   .booking-confirmation {
-    background-color: green;
+    height: 40px;
     text-align: center;
+    margin-bottom: 15px;
+    border-width: 3px;
   }
-}
